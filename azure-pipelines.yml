@@ -15,4 +15,6 @@ steps:
       echo "Running post-deployment tests..."
       git --version
       echo "Checked git version"
+      docker --version
+      echo "Checked docker version"
     displayName: 'Multi-line Script'
