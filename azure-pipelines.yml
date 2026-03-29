@@ -2,6 +2,6 @@ trigger: [main]
 pool:
   vmImage: 'ubuntu-latest'
 steps:
-- task: echo "Building the project..."
-- task: echo "Running tests..."
-- task: echo "Deploying the application..."
+  - script: echo "Building the project..."
+  - script: echo "Running tests..."
+  - script: echo "Deploying the application..."
