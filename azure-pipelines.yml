@@ -12,13 +12,19 @@ steps:
   - script: echo "Pipeline completed successfully!"
     displayName: 'Complete'
   - script: |
-      echo "Running post-deployment tests..."
-      git --version
-      echo "Checked git version"
-      docker --version
-      echo "Checked docker version"
-      wget -O - https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
-      echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(grep -oP '(?<=UBUNTU_CODENAME=).*' /etc/os-release || lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
-      sudo apt update && sudo apt install terraform
-      terraform --version
+      # echo "Running post-deployment tests..."
+      # git --version
+      # echo "Checked git version"
+      # docker --version
+      # echo "Checked docker version"
+      # wget -O - https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+      # echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(grep -oP '(?<=UBUNTU_CODENAME=).*' /etc/os-release || lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+      # sudo apt update && sudo apt install terraform
+      # terraform --version
+
+      echo "Fist Python Setup"
+      sudo apt update
+      sudo apt install python3.8 -y
+      python3.8 --version
+      python hello.py
     displayName: 'Tools Check'
