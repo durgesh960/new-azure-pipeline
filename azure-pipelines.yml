@@ -4,6 +4,15 @@ pool:
   vmImage: 'ubuntu-latest'
 steps:
   - script: echo "Building the project..."
+    displayName: 'Build'
   - script: echo "Running tests..."
+    displayName: 'Test'
   - script: echo "Deploying the application..."
+    displayName: 'Deploy'
   - script: echo "Pipeline completed successfully!"
+    displayName: 'Complete'
+  - script: |
+      echo "Running post-deployment tests..."
+      git --version
+      echo "Checked git version"
+    displayName: 'Multi-line Script'
