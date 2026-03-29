@@ -6,3 +6,4 @@ steps:
   - script: echo "Building the project..."
   - script: echo "Running tests..."
   - script: echo "Deploying the application..."
+  - script: echo "Pipeline completed successfully!"
